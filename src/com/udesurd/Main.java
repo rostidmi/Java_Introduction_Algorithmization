@@ -2,7 +2,7 @@ package com.udesurd;
 
 public class Main {
     public static void main(String[] args) {
-        task1_3();
+        task1_4();
     }
 
     private static void task1_1(){
@@ -52,5 +52,32 @@ public class Main {
                 nullCount++;
         }
         System.out.println("В данном массиве чисел " + negativeCount +" отрицательных чисел, " + positiveCount+" положительных и " +nullCount+ "нулевых чисел.");
+    }
+
+    private static void task1_4(){
+        System.out.println("4.  Даны действительные числа а1 ,а2 ,..., аn . Поменять местами наибольший и наименьший элементы.");
+        int [] array = new int[] { 0, 1, 2, 3, 4, 5};
+        int min=0;
+        int max=0;
+        for (int i = 0; i <array.length; i++) {
+            System.out.println(array[i]);
+            if (array[i] > max)
+                max = array[i];
+
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        System.out.println("-------");
+        int temp =array[max];
+        array[max]=array[min];
+        array[min] = temp;
+        for (int j=0; j<array.length; j++)
+            System.out.println(array[j]);
+
+
+
+
+
     }
 }
