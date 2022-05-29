@@ -2,7 +2,7 @@ package com.udesurd;
 
 public class Main {
     public static void main(String[] args) {
-        task1_4();
+        task1_5();
     }
 
     private static void task1_1(){
@@ -79,5 +79,18 @@ public class Main {
 
 
 
+    }
+
+    private static void task1_5() {
+        System.out.println("5. Даны целые числа а1 ,а2 ,..., аn . Вывести на печать только те числа, для которых аi > i.");
+        int a []= new int [] {5, 2, 8, 5, 3, 9, 7, 8, 9};
+        for (int i = 0; i < a.length; i++)
+            if (a[i]>i)
+                System.out.println(a[i]);
+    }
+
+    private static void task1_6(){
+        System.out.println("6. Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых\n" +
+                "являются простыми числами.");
     }
 }
