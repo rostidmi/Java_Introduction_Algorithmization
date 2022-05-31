@@ -1,8 +1,11 @@
 package com.udesurd;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Main {
     public static void main(String[] args) {
-        task1_5();
+        task1_6();
     }
 
     private static void task1_1(){
@@ -74,11 +77,6 @@ public class Main {
         array[min] = temp;
         for (int j=0; j<array.length; j++)
             System.out.println(array[j]);
-
-
-
-
-
     }
 
     private static void task1_5() {
@@ -89,8 +87,45 @@ public class Main {
                 System.out.println(a[i]);
     }
 
-    private static void task1_6(){
+    private static void task1_6() {
         System.out.println("6. Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых\n" +
                 "являются простыми числами.");
+
+        double num = 100;
+        double sum = 0;
+        {
+            for (int i = 0; i < num; i++)
+                if (isPrime(i))
+                    sum += i;
+        }
+        System.out.println(sum);
+
+
     }
-}
+
+
+
+
+
+
+
+
+
+//  Использовал готовый алгоритм поиска простого числа*
+    private static boolean isPrime(int i) {
+        if (i <= 3) {
+            return i > 1;
+        } else if (i % 2 == 0 || i % 3 == 0) {
+            return false;
+        }
+
+        int tmp = 5;
+
+        while (tmp * tmp <= i) {
+            if (i % tmp == 0 || i % (tmp + 2) == 0) {
+                return false;
+            }
+            tmp += 6;
+        }
+        return true;
+    }   }
