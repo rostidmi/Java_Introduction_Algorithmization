@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     public static void main(String[] args) {
-        task1_6();
+        task1_7();
     }
 
     private static void task1_1(){
@@ -101,6 +101,18 @@ public class Main {
         System.out.println(sum);
 
 
+    }
+
+    private static void task1_7(){
+        System.out.println("7. Даны действительные числа а1, а2, ..., аn. Найти  max(a1 + a2n, a2 + a2n-1, ..., аn + an+1).");
+        int arr []= new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int maxSum = arr[0] + arr[arr.length-1];
+        for (int i=0; i<arr.length; i++)
+            if (maxSum < (arr[i] + arr[arr.length - i - 1]))
+                maxSum = arr[i] + arr[arr.length-i-1];
+
+
+        System.out.println(maxSum);
     }
 
 
